@@ -76,6 +76,6 @@ app.get('/collections/:name',function(req,res){
   })
 });
 
-var server = app.listen(3000, '193.60.79.168', function() {
+var server = app.listen(8080, function() {
     console.log('Listening on port %d', server.address().port);
 });
