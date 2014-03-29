@@ -6,7 +6,7 @@ var monk = require('monk');
 var config = {       
 	"USER"    : "",                 
 	"PASS"    : "",       
-	"HOST"    : "ec2-54-72-153-192.eu-west-1.compute.amazonaws.com",    "PORT"    : "27017",        
+	"HOST"    : "ec2-**-**-***-***.eu-west-1.compute.amazonaws.com",    "PORT"    : "27017",        
 	"DATABASE" : "test"     
 };
 var dbPath  = "mongodb://"+config.USER + ":"+     config.PASS + "@"+     config.HOST + ":"+    config.PORT + "/"+     config.DATABASE;
@@ -51,21 +51,6 @@ app.get('/twitchByLocation/:name', function(req,res){
 		//return the results as a JSON object
 		res.json(docs);
 	})
-});
-
-//example queries from: http://webapplog.com/intro-to-express-js-simple-rest-api-app-with-monk-and-mongodb/
-//get all databases
-app.get('/',function(req,res){
-  db.driver.admin.listDatabases(function(e,dbs){
-      res.json(dbs);
-  });
-});
-
-//get all collections
-app.get('/collections',function(req,res){
-  db.driver.collectionNames(function(e,names){
-    res.json(names);
-  })
 });
 
 //get 20 items in the collection specified
